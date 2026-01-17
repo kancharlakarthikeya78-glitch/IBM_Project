@@ -1,7 +1,7 @@
 # IBM_Project
 # AI-Based Smart Water Conservation Advisor
 
-Wensite link:https://web-designer-ai--kancharlakarth1.replit.app/
+Website link: https://web-designer-ai--kancharlakarth1.replit.app/
 
 This project is developed as part of the **1M1B – IBM SkillsBuild AI for Sustainability Virtual Internship**.
 
