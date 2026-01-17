@@ -1,0 +1,18 @@
+export async function registerRoutes(httpServer, app) {
+  app.post("/api/advice", async (req, res) => {
+    const input = req.body;
+    let advice = "Great job maintaining sustainable habits!";
+
+    if (input.showerTime > 10) {
+      advice =
+        "Your shower time is higher than recommended. Reducing it to 5 minutes can save up to 40 liters of water per shower.";
+    } else if (input.laundryFrequency > 3) {
+      advice =
+        "Try to accumulate laundry and run full loads only. This reduces water consumption significantly.";
+    }
+
+    res.status(200).json({ advice });
+  });
+
+  return httpServer;
+}
