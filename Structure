@@ -1,0 +1,14 @@
+ai-water-conservation-advisor/
+│
+├── README.md
+├── RESPONSIBLE_AI.md
+│
+├── frontend/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+│
+└── backend/
+    ├── schema.ts
+    ├── routes.ts
+    ├── storage.ts
