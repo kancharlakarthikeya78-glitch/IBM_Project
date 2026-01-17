@@ -1,0 +1,19 @@
+import { pgTable, text, serial, integer, timestamp } from "drizzle-orm/pg-core";
+import { createInsertSchema } from "drizzle-zod";
+import { z } from "zod";
+
+export const usageLogs = pgTable("usage_logs", {
+  id: serial("id").primaryKey(),
+  showerTime: integer("shower_time").notNull(),
+  laundryFrequency: integer("laundry_frequency").notNull(),
+  advice: text("advice").notNull(),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+export const insertUsageLogSchema = createInsertSchema(usageLogs).omit({
+  id: true,
+  createdAt: true,
+});
+
+export type UsageLog = typeof usageLogs.$inferSelect;
+export type InsertUsageLog = z.infer<typeof insertUsageLogSchema>;
