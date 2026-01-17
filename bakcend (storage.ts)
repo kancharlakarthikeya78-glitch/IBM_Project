@@ -1,0 +1,9 @@
+import { db } from "./db";
+import { usageLogs } from "./schema";
+
+export class DatabaseStorage {
+  async createUsageLog(log) {
+    const [entry] = await db.insert(usageLogs).values(log).returning();
+    return entry;
+  }
+}
