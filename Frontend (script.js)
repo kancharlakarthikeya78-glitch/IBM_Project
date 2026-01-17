@@ -1,0 +1,13 @@
+async function getAdvice() {
+  const showerTime = document.getElementById("shower").value;
+  const laundryFrequency = document.getElementById("laundry").value;
+
+  const response = await fetch("/api/advice", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ showerTime, laundryFrequency })
+  });
+
+  const data = await response.json();
+  document.getElementById("result").innerText = data.advice;
+}
